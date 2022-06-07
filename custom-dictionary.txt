@@ -1,0 +1,30 @@
+# cspell: https://github.com/streetsidesoftware/cspell
+# spelling checker
+# vscode plugin: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+# Custom Dictionary Words
+
+######## project configs ########
+webextensions
+
+Windicss
+windicss
+windi
+Attributify
+
+arrowParens
+
+vite
+vitejs
+
+Tannineo
+Chao
+Chen
+
+storysource
+
+pnpm
+
+######## my code ########
+Newtab
+
+# TODO do not know why '*' prefix/suffix is not effective, bug?

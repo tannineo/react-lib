@@ -1,0 +1,24 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    "./node_modules/**",
+    "./package.json",
+    "./.cspell.json",
+    "./package-lock.json",
+    "dist/"
+  ],
+  "dictionaries": ["custom-dictionary"],
+  "dictionaryDefinitions": [
+    {
+      // The name of the dictionary is used to look it up.
+      "name": "custom-dictionary",
+      // Path to the custom word file. Relative to this `cspell.json` file.
+      "path": "./custom-dictionary.txt",
+      // Some editor extensions will use `addWords` for adding words to your
+      // personal dictionary.
+      "addWords": true
+    }
+  ],
+  "flagWords": ["hte"]
+}

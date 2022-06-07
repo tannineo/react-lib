@@ -1,0 +1,10 @@
+# Dependencies
+**/node_modules/
+
+# Editor settings and misc files
+.vscode/
+.DS_Store
+
+# Build directories
+dist/
+build/
