@@ -1,6 +1,10 @@
 # Dependencies
 **/node_modules/
 
+# Include storybook configs
+!.storybook/main.js
+!.storybook/preview.js
+
 # Editor settings and misc files
 .vscode/
 .DS_Store
