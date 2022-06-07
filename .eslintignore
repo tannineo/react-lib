@@ -2,6 +2,7 @@
 **/node_modules/
 
 # Include storybook configs
+# TODO not linting storybook configs
 !.storybook/main.js
 !.storybook/preview.js
 
