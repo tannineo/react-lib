@@ -15,7 +15,7 @@
     "check:lint": "eslint .",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 -c .storybook/",
     "build:storybook": "build-storybook -c .storybook/",
-    "preview:storybook": "http-server storybook-static --port 6007 --silent",
+    "preview:storybook": "echo 'server trying to start at http://localhost:6007' && http-server storybook-static --port 6007 --silent",
     "deploy:storybook": "npm run build:storybook && gh-pages -d storybook-static",
     "prepare": "husky install"
   },
