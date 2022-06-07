@@ -1,18 +1,20 @@
 import iconPlugin from '@windicss/plugin-icons'
-import { dirname, join, resolve } from 'path'
+import { join, resolve } from 'path'
 import defaultConfig from 'windicss/defaultConfig'
 import { defineConfig } from 'windicss/helpers'
 import formsPlugin from 'windicss/plugin/forms'
-
-const basePath = dirname(resolve(__dirname))
 
 // sorting classnames is handled by vscode extension:
 // https://windicss.org/editors/vscode.html
 
 export default defineConfig({
   darkMode: 'class',
+  content: [
+    './*.html',
+    './src/**/*.{vue,js,ts,jsx,tsx}',
+    './.storybook/*.{js.ts}',
+  ],
   attributify: true,
-  content: ['./*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
@@ -27,7 +29,10 @@ export default defineConfig({
   plugins: [formsPlugin, iconPlugin],
 
   extract: {
-    exclude: [join(basePath, '/node_modules/**/*')],
-    include: [join(basePath, '/src/**/*.{vue,html,js,ts,jsx,tsx}')],
+    exclude: [join(__dirname, '/node_modules/**/*')],
+    include: [
+      join(__dirname, '/src/**/*.{vue,html,js,ts,jsx,tsx}'),
+      join(__dirname, '/.storybook/**/*.{vue,html,js,ts,jsx,tsx}'),
+    ],
   },
 })

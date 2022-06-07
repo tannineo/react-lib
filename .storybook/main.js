@@ -1,5 +1,5 @@
 const path = require('path')
-const WindiCSS = require('vite-plugin-windicss').default
+const VitePluginWindicss = require('vite-plugin-windicss').default
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -7,20 +7,33 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-storysource',
+    {
+      name: '@storybook/addon-storysource',
+      options: {
+        sourceLoaderOptions: {
+          injectStoryParameters: false,
+        },
+      },
+    },
+    'storybook-dark-mode',
   ],
   framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-vite',
     disableTelemetry: true,
   },
-  async viteFinal(config, { configType }) {
+  viteFinal: async (config, { configType }) => {
     config.plugins = config.plugins ?? []
-    config.plugins.push(
-      WindiCSS({
-        config: path.join(__dirname, '../windi.config.ts'),
-      }),
-    )
+
+    const windiCSSOptions = {
+      config: path.join(__dirname, '..', '/windi.config.ts'),
+      root: path.resolve(path.resolve(__dirname)),
+    }
+
+    console.log('windiCSSOptions: ', windiCSSOptions)
+
+    config.plugins.push(VitePluginWindicss(windiCSSOptions))
+
     return config
   },
   features: {

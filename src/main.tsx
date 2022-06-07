@@ -1,15 +1,19 @@
-import './index.css'
+import './styles/main.css'
+import 'virtual:windi.css'
+import 'virtual:windi-devtools'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import App from './App'
+import TestButton from './components/TestButton'
 
 const root = document.getElementById('root')
 if (root) {
   ReactDOM.createRoot(root).render(
     <React.StrictMode>
-      <App />
+      <>
+        <TestButton>Hello!</TestButton>
+      </>
     </React.StrictMode>,
   )
 }

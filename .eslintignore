@@ -13,3 +13,4 @@
 # Build directories
 dist/
 build/
+storybook-static/
