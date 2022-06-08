@@ -1,5 +1,8 @@
 const path = require('path')
+const { mergeConfig } = require('vite')
 const VitePluginWindicss = require('vite-plugin-windicss').default
+
+const GH_PAGE_URL = 'https://tannineo.github.io/react-lib/'
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -22,8 +25,9 @@ module.exports = {
     builder: '@storybook/builder-vite',
     disableTelemetry: true,
   },
+
   viteFinal: async (config, { configType }) => {
-    config.plugins = config.plugins ?? []
+    console.log('configType => ', configType)
 
     const windiCSSOptions = {
       config: path.join(__dirname, '..', '/windi.config.ts'),
@@ -32,9 +36,10 @@ module.exports = {
 
     console.log('windiCSSOptions: ', windiCSSOptions)
 
-    config.plugins.push(VitePluginWindicss(windiCSSOptions))
-
-    return config
+    return mergeConfig(config, {
+      plugins: [VitePluginWindicss(windiCSSOptions)],
+      base: configType === 'PRODUCTION' ? GH_PAGE_URL : '',
+    })
   },
   features: {
     storyStoreV7: true,
