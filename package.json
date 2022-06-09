@@ -6,6 +6,7 @@
     "name": "Chao Chen",
     "email": "tannineo@outlook.com"
   },
+  "license": "MIT",
   "scripts": {
     "analysis": "windicss-analysis",
     "dev": "vite",
