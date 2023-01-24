@@ -1,6 +1,8 @@
 # react-lib
 
-My personal component library, for components and hooks.
+This storybook will contain some components and showcases.
+
+Please consider this storybook as a rough collection/clipbook from my daily work.
 
 Using `storybook` v7 with `vite` v4.
 
