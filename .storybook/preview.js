@@ -15,4 +15,7 @@ export const parameters = {
   darkMode: {
     current: 'dark',
   },
+  storySort: {
+    method: 'alphabetical',
+  },
 }
