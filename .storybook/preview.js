@@ -1,4 +1,8 @@
 import 'tailwindcss/tailwind.css'
+import Alpine from 'alpinejs'
+
+window.Alpine = Alpine
+Alpine.start()
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

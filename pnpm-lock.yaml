@@ -11,6 +11,7 @@ specifiers:
   '@types/react': ^18.0.26
   '@types/react-dom': ^18.0.9
   '@vitejs/plugin-react': ^3.0.0
+  alpinejs: ^3.11.1
   autoprefixer: ^10.4.13
   gh-pages: ^4.0.0
   http-server: ^14.1.1
@@ -40,6 +41,7 @@ devDependencies:
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
   '@vitejs/plugin-react': 3.0.1_vite@4.0.4
+  alpinejs: 3.11.1
   autoprefixer: 10.4.13_postcss@8.4.21
   gh-pages: 4.0.0
   http-server: 14.1.1
@@ -3034,6 +3036,16 @@ packages:
       - supports-color
     dev: true
 
+  /@vue/reactivity/3.1.5:
+    resolution: {integrity: sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==}
+    dependencies:
+      '@vue/shared': 3.1.5
+    dev: true
+
+  /@vue/shared/3.1.5:
+    resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
+    dev: true
+
   /@yarnpkg/esbuild-plugin-pnp/3.0.0-rc.15_esbuild@0.16.17:
     resolution: {integrity: sha512-kYzDJO5CA9sy+on/s2aIW0411AklfCi8Ck/4QDivOqsMKpStZA2SsR+X27VTggGwpStWaLrjJcDcdDMowtG8MA==}
     engines: {node: '>=14.15.0'}
@@ -3110,6 +3122,12 @@ packages:
     dependencies:
       clean-stack: 2.2.0
       indent-string: 4.0.0
+    dev: true
+
+  /alpinejs/3.11.1:
+    resolution: {integrity: sha512-0Y+4WKQcEZrvpfS98qeSOXCPXFPorULQ+1hc8lQrx+1HHzkUofD4HzjTfz+wimA5tSsGnpXz/SoF2P9saiXZCw==}
+    dependencies:
+      '@vue/reactivity': 3.1.5
     dev: true
 
   /ansi-align/3.0.1:

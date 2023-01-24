@@ -1,0 +1,52 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='1. Intro/02. AlpineJS' />
+
+# AlpineJS
+
+This `mdx` will test the AlpineJS features.
+
+For further information, please visit [AlpineJS offical page](https://alpinejs.dev/).
+
+<div
+  class='flex flex-col w-full max-w-5xl bg-gray-400 text-black p-4'
+  x-data='{ open: 1 }'
+>
+  {/* Tab buttons */}
+  <div class='flex flex-row w-full relative'>
+    <button
+      x-bind:class="open == 1 ? 'border border-black border-b-transparent border-b-2 rounded-t-lg w-24 bg-white' : 'border border-black border-b-transparent border-b-2 rounded-t-lg w-24 bg-gray-300'"
+      x-on:click='open = 1'
+    >
+      Tab 1
+    </button>
+    <div
+      x-show='open == 1'
+      class='absolute w-24 bg-white h-1 -bottom-[1px] border-black border-r border-l'
+    ></div>
+    <button
+      x-bind:class="open == 2 ? 'border border-black border-b-transparent border-b-2 rounded-t-lg w-24 bg-white' : 'border border-black border-b-transparent border-b-2 rounded-t-lg w-24 bg-gray-300'"
+      x-on:click='open = 2'
+    >
+      Tab 2
+    </button>
+    <div
+      x-show='open == 2'
+      class='absolute w-24 bg-white h-1 left-24 -bottom-[1px] border-black border-r border-l'
+    ></div>
+  </div>
+  {/* Tab 1 content */}
+  <div
+    x-show='open == 1'
+    class='w-full border-black border bg-white p-4 rounded-b-lg rounded-tr-lg'
+  >
+    Tab 1 content
+  </div>
+  {/* Tab 2 content */}
+  <div
+    x-show='open == 2'
+    class='w-full border-black border bg-white p-4 rounded-b-lg rounded-tr-lg'
+  >
+    Tab 2 content
+  </div>
+</div>
